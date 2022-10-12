@@ -8,3 +8,28 @@
     background-size: 360px;
     background-position: right bottom;
 }
+body {
+    min-width: 20rem;
+    background-color: #E0E4E4;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+}
+.breadcrumb {
+    color: #18222D;
+}
+.page-header {
+    color: #18222D;
+}
+.col-auto>.btn {
+    background-color: #18222D;
+    color: white;
+    border-radius: 30px;
+    margin-top: 100%;
+}
+.page-header{
+    letter-spacing: 0.125rem;
+}
+#to-do-tasks{
+    border: solid black;
+}

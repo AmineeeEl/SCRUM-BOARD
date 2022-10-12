@@ -12,6 +12,11 @@
 	<link href="assets/css/vendor.min.css" rel="stylesheet" />
 	<link href="assets/css/default/app.min.css" rel="stylesheet" />
 	<link href="assets/css/style.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+		</style>
+		
 	<!-- ================== END core-css ================== -->
 </head>
 <body>
@@ -20,11 +25,11 @@
 	<div id="app" class="app-without-sidebar">
 		<!-- BEGIN #content -->
 		<div id="content" class="app-content main-style">
-			<div class="">
-				<div>
-					<ol class="">
-						<li class=""><a href="javascript:;">Home</a></li>
-						<li class="">Scrum Board </li>
+			<div class="row justify-content-between">
+				<div class="col-auto">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+						<li class="breadcrumb-item active">Scrum Board </li>
 					</ol>
 					<!-- BEGIN page-header -->
 					<h1 class="page-header">
@@ -33,8 +38,8 @@
 					<!-- END page-header -->
 				</div>
 				
-				<div class="">
-					<button class=""><i class=""></i> Add Task</a>
+				<div class="col-auto" style="color: #18222D;">
+					<button class="btn"><i class=""></i> <span>+</span> Add Task</button>
 				</div>
 			</div>
 			
@@ -67,6 +72,7 @@
 								<div class="">
 									<i class=""></i> 
 								</div>
+								<!-- ___________________ -->
 								<div class="">
 									<div class="">Consider creating an acceptance criteria list</div>
 									<div class="">
