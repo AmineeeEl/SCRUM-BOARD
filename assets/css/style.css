@@ -33,3 +33,28 @@ body {
 #to-do-tasks{
     border: solid black;
 }
+h4 {
+    color: white;
+    font-size: 1.25em;
+    font-weight: lighter;
+    
+}
+.flex-wrap > div {
+    max-width: 420px;
+    margin-bottom: 10px; 
+}
+.cl-4{
+    background-color: white;
+    border-radius: 10px;
+}
+.status {
+    background-color: #18222D;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 25px;
+    justify-items: center;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+
