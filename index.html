@@ -36,20 +36,20 @@
 					<!-- END page-header -->
 				</div>
 				
-				<div class="" style="color: #18222D;">
-					<button class="btn"><i class=""></i> <span>+</span> Add Task</button>
+				<div class="">
+					<button class="btn shadow-sm"><i class=""></i> <span>+</span> Add Task</button>
 				</div>
 			</div>
 			
-			<div class="  d-flex flex-lg-row flex-xlg-wrap justify-content-xl-around overflow-auto" style=" max-width: 1350px;margin: auto; ">
+			<div class=" d-flex flex-lg-row flex-xlg-wrap justify-content-xl-around overflow-auto mt-5  " style=" max-width: 95vw;margin: auto;">
 
 				<div class="" >
-					<div class="  cl-4 m-2">
-						<div class="status">
-							<h4 class="">To do (<span id="to-do-tasks-count">5</span>)</h4>
+					<div class="cl-4 m-2 shadow-sm"  style="min-width: 450px;">
+						<div class="rounded-top h-35px "style="background-color: #18222D;">
+							<h4 class="fs-20px text-white fw-normal text-center shadow pt-4px" >To do (<span id="to-do-tasks-count">5</span>)</h4>
 
 						</div>
-						<div class="container overflow-auto align-items-center "style="box-sizing: border-box;max-height:470px;" id="to-do-tasks">
+						<div class="container overflow-auto align-items-center  "style="box-sizing: border-box;max-height:470px;" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
 							<button class="btn" >
 								<div class="">
@@ -172,13 +172,89 @@
 					</div>
 				</div>
 
-				<div class=""></div>
-					<div class="cl-4 m-2">
-						<div class="status">
-							<h4 class="">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
+				<div class=""></div>      
+					<div class="cl-4 m-2 shadow-sm"style="min-width: 450px;">
+						<div class="rounded-top h-35px "style="background-color: #18222D;">
+							<h4 class="fs-20px text-white fw-normal text-center shadow pt-4px" >In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
 
 						</div>
-						<div class="container" id="in-progress-tasks">
+						<div class="container overflow-auto align-items-center  "style="box-sizing: border-box;max-height:470px;" id="in-progress-tasks">
+							<!-- IN PROGRESS TASKS HERE -->
+							<button class="btn">
+								<div class="">
+									<i class=""></i> 
+								</div>
+								<div class="">
+									<div class="">Describe steps to reproduce an issue</div>
+									<div class="">
+										<div class="">#6 created in 2022-10-08</div>
+										<div class="" title="including as many details as possible.">including as many details as possible.</div>
+									</div>
+									<div class="">
+										<span class="">High</span>
+										<span class="">Bug</span>
+									</div>
+								</div>
+							</button>
+							<button class="btn">
+								<div class="">
+									<i class=""></i> 
+								</div>
+								<div class="">
+									<div class="">Provide access</div>
+									<div class="">
+										<div class="">#7 created in 2022-10-08</div>
+										<div class="" title="to the affected account and services if possible. It might be hard to reproduce the exact environment on a local machine.">to the affected account and services if possible. It mi...</div>
+									</div>
+									<div class="">
+										<span class="">High</span>
+										<span class="">Bug</span>
+									</div>
+								</div>
+							</button>
+							<button class="btn">
+								<div class="">
+									<i class=""></i> 
+								</div>
+								<div class="">
+									<div class="">Provide environment information</div>
+									<div class="">
+										<div class="">#8 created in 2022-10-08</div>
+										<div class="" title="i.e., browser version, operating system version etc. Sometimes a list of installed browser plugins and extensions might be helpful as well.">i.e., browser version, operating system version etc. So...</div>
+									</div>
+									<div class="">
+										<span class="">High</span>
+										<span class="">Bug</span>
+									</div>
+								</div>
+							</button>
+							<button class="btn">
+								<div class="">
+									<i class=""></i> 
+								</div>
+								<div class="">
+									<div class="">Provide a link to an exception and/or a stack trace</div>
+									<div class="">
+										<div class="">#9 created in 2022-10-08</div>
+										<div class="" title="as investigating those is usually the first step to take in resolving the problem.">as investigating those is usually the first step to tak...</div>
+									</div>
+									<div class="">
+										<span class="">High</span>
+										<span class="">Bug</span>
+									</div>
+								</div>
+							</button>
+							
+						</div>
+					</div>
+
+					<div class=""></div>
+					<div class="cl-4 m-2 shadow-sm"style="min-width: 450px;">
+						<div class="rounded-top h-35px "style="background-color: #18222D;">
+							<h4 class="fs-20px text-white fw-normal text-center shadow pt-4px" >In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
+
+						</div>
+						<div class="container overflow-auto align-items-center  "style="box-sizing: border-box;max-height:470px;" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
 							<button class="btn">
 								<div class="">
@@ -245,83 +321,8 @@
 								</div>
 							</button>
 						</div>
-					</div>
-				
-
-				<div class="">
-					<div class="cl-4 m-2">
-						<div class="status">
-							<h4 class="">Done (<span id="done-tasks-count">4</span>)</h4>
-
-						</div>
-						<div class="container" id="done-tasks">
-							<!-- DONE TASKS HERE -->
-							<button class="btn">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Provide access to logs</div>
-									<div class="">
-										<div class="">#10 created in 2022-10-08</div>
-										<div class="" title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="btn">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Provide access to the affected server or database dump</div>
-									<div class="">
-										<div class="">#11 created in 2022-10-08</div>
-										<div class="" title="If it is possible and when it does not violate security policies, it is usually helpful for the developer to access the original data that might have played a role in the problem.">If it is possible and when it does not violate security...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="btn">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Make a screencast</div>
-									<div class="">
-										<div class="">#12 created in 2022-10-08</div>
-										<div class="" title="It is not always necessary, but many times a short screencast (or at least a screenshot) says more than a thousand words. While working on MacOS you can use QuickTime Player for the purpose but there are plenty of tools available for other operating systems as well.">It is not always necessary, but many times a short scre...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button  class="btn">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Provide contact information</div>
-									<div class="">
-										<div class="">#13 created in 2022-10-08</div>
-										<div class="" title="of the person that reported the bug. This will not always be possible, but in some cases it might be advantageous and most effective if a developer can have a chat with a person that actually experienced the bug, especially if the steps to reproduce a problem are not deterministic.">of the person that reported the bug. This will not alwa...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
+					</div>	
+		
 				</div>
 			</div>
 		</div>
