@@ -6,13 +6,11 @@
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
 	<!-- ================== BEGIN core-css ================== -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="assets/css/vendor.min.css" rel="stylesheet" />
 	<link href="assets/css/default/app.min.css" rel="stylesheet" />
 	<link href="assets/css/style.css" rel="stylesheet" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 		</style>
@@ -25,35 +23,35 @@
 	<div id="app" class="app-without-sidebar">
 		<!-- BEGIN #content -->
 		<div id="content" class="app-content main-style" >
-			<div class="row justify-content-between">
-				<div class="col-auto">
+			<div class="navbar">
+				<div class="">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
 						<li class="breadcrumb-item active">Scrum Board </li>
 					</ol>
 					<!-- BEGIN page-header -->
-					<h1 class="page-header">
+					<h1 class="page-header fs-30px">
 						Scrum Board 
 					</h1>
 					<!-- END page-header -->
 				</div>
 				
-				<div class="col-auto" style="color: #18222D;">
+				<div class="" style="color: #18222D;">
 					<button class="btn"><i class=""></i> <span>+</span> Add Task</button>
 				</div>
 			</div>
 			
-			<div class="d-flex flex-wrap justify-content-center" style="margin-top: 20px;">
+			<div class="  d-flex flex-lg-row flex-xlg-wrap justify-content-xl-around overflow-auto" style=" max-width: 1350px;margin: auto; ">
 
-				<div class="">
-					<div class="cl-4">
+				<div class="" >
+					<div class="  cl-4 m-2">
 						<div class="status">
 							<h4 class="">To do (<span id="to-do-tasks-count">5</span>)</h4>
 
 						</div>
-						<div class="" id="to-do-tasks">
+						<div class="container overflow-auto align-items-center "style="box-sizing: border-box;max-height:470px;" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
-							<button class="" >
+							<button class="btn" >
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -69,7 +67,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -90,7 +88,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -106,7 +104,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -122,7 +120,39 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
+								<div class="">
+									<i class=""></i> 
+								</div>
+								<div class="">
+									<div class="">Use charts and diagrams</div>
+									<div class="">
+										<div class="">#5 created in 2022-10-08</div>
+										<div class="" title="While it is not always necessary, sometimes it might be beneficial to prepare a flowchart, a block diagram or some other kind of concept visualization that will render it easy for the developer to comprehend the task and its scope.">While it is not always necessary, sometimes it might be...</div>
+									</div>
+									<div class="">
+										<span class="">High</span>
+										<span class="">Feature</span>
+									</div>
+								</div>
+							</button>
+							<button class="btn">
+								<div class="">
+									<i class=""></i> 
+								</div>
+								<div class="">
+									<div class="">Use charts and diagrams</div>
+									<div class="">
+										<div class="">#5 created in 2022-10-08</div>
+										<div class="" title="While it is not always necessary, sometimes it might be beneficial to prepare a flowchart, a block diagram or some other kind of concept visualization that will render it easy for the developer to comprehend the task and its scope.">While it is not always necessary, sometimes it might be...</div>
+									</div>
+									<div class="">
+										<span class="">High</span>
+										<span class="">Feature</span>
+									</div>
+								</div>
+							</button>
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -143,14 +173,14 @@
 				</div>
 
 				<div class=""></div>
-					<div class="cl-4">
+					<div class="cl-4 m-2">
 						<div class="status">
 							<h4 class="">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
 
 						</div>
-						<div class="" id="in-progress-tasks">
+						<div class="container" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -166,7 +196,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -182,7 +212,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -198,7 +228,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -219,14 +249,14 @@
 				
 
 				<div class="">
-					<div class="cl-4">
+					<div class="cl-4 m-2">
 						<div class="status">
 							<h4 class="">Done (<span id="done-tasks-count">4</span>)</h4>
 
 						</div>
-						<div class=" " id="done-tasks">
+						<div class="container" id="done-tasks">
 							<!-- DONE TASKS HERE -->
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -242,7 +272,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -258,7 +288,7 @@
 									</div>
 								</div>
 							</button>
-							<button class="">
+							<button class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
@@ -274,7 +304,7 @@
 									</div>
 								</div>
 							</button>
-							<button  class="">
+							<button  class="btn">
 								<div class="">
 									<i class=""></i> 
 								</div>
