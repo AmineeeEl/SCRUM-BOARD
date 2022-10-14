@@ -10,23 +10,19 @@
 }
 body {
     min-width: 345px;
-    background-color: #E0E4E4;
+    background-color: #e0e4e4;
     height: 100vh;
-}
-* {
-    font-family: 'Roboto', sans-serif;
 }
 
 .navbar .btn {
-    background-color: #1aaba4;
-    border-radius: 30px;
+    background-color: #0864cc;
     margin-top: 70px;
 }
 .myCard{
     background-color: rgb(255, 255, 255);
-    max-width: 450px;
-    min-width: 330px;
-    height: 550px;
+    max-width: 550px;
+    min-width: 350px;
+    
 }
 
 ::-webkit-scrollbar {
@@ -43,6 +39,7 @@ body {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); 
 }
+
 
 
 
