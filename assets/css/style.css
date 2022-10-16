@@ -22,7 +22,8 @@ body {
     background-color: rgb(255, 255, 255);
     max-width: 550px;
     min-width: 350px;
-    
+    height: 500px;
+
 }
 
 ::-webkit-scrollbar {
