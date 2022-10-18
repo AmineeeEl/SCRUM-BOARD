@@ -57,7 +57,7 @@
 					<div class=" h-35px align "style="padding-left:20px;background-color: #2d353c;border-top-left-radius:7px;border-top-right-radius:7px;">
 						<h4 class="fs-16px text-white fw-normal text-left shadow pt-8px " >To Do (<span id="to-do-tasks-count">6</span>)</h4>
 					</div>
-					<div id="toDoCard" class=" overflow-auto list-group "style="box-sizing: border-box;max-height:470px;border-bottom-left-radius:17px;border-bottom-right-radius:17px;" id="to-do-tasks">
+					<div id="toDoCard" class="tasksCard overflow-auto list-group "style="box-sizing: border-box;max-height:470px;border-bottom-left-radius:17px;border-bottom-right-radius:17px;" id="to-do-tasks">
 						<!-- TO DO TASKS GOES HERE -->
 						
 					</div>
@@ -67,7 +67,7 @@
 					<div class=" h-35px align "style="padding-left:20px;background-color: #2d353c;border-top-left-radius:7px;border-top-right-radius:7px;">
 						<h4 class="fs-17px text-white fw-normal text-left shadow pt-8px " >In Progess (<span id="in-progress-tasks-count">4</span>)</h4>
 					</div>
-					<div id="inProgessCard" class=" overflow-auto list-group"style="box-sizing: border-box;max-height:510px;border-bottom-left-radius:17px;border-bottom-right-radius:17px;" id="in-progress-tasks">
+					<div id="inProgessCard" class="tasksCard overflow-auto list-group"style="box-sizing: border-box;max-height:510px;border-bottom-left-radius:17px;border-bottom-right-radius:17px;" id="in-progress-tasks">
 						<!-- IN PROGRESS TASKS GOES HERE -->
 						
 					</div>
@@ -77,7 +77,7 @@
 					<div class=" h-35px align "style="padding-left:20px;background-color: #2d353c;border-top-left-radius:7px;border-top-right-radius:7px;">
 						<h4 class="fs-17px text-white fw-normal text-left shadow pt-8px " >Done (<span id="done-tasks-count">3</span>)</h4>
 					</div>
-					<div id="doneCard" class=" overflow-auto list-group"style="box-sizing: border-box;max-height:510px;border-bottom-left-radius:17px;border-bottom-right-radius:17px;" id="done-tasks">
+					<div id="doneCard" class="tasksCard overflow-auto list-group"style="box-sizing: border-box;max-height:510px;border-bottom-left-radius:17px;border-bottom-right-radius:17px;" id="done-tasks">
 						<!-- DONE TASKS GOES HERE -->
 						
 					</div>
@@ -135,28 +135,63 @@
 						<label  for="Description" class="text-dark fw-bold fs-5">Description&emsp;<span class="text-muted fw-normal">(optional)</span></label> <br>
 						<textarea rows="5" class="form-control form-control-lg" id="Description"></textarea>
 					</div>  
-					<div class="modal-footer">
-						<button id="close" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-						<input id="save" onclick="add()" type="submit" class="btn  text-white" style="background-color: #0864cc;">
-			  		</div>	
+					
 				</form>
+				<div class="modal-footer">
+					<button id="close" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+					<button id="save" onclick="CreateTask()" type="submit" class="btn  text-white" style="background-color: #0864cc;">Create
+					</button>
+				  </div>
 				<!--end form-->
 			  </div>
 			</div>
 			</div>
 	</div>
+	<!-- BUTTON MODAL -->
+	<div class="modal fade" id="fullView" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content" style="min-width:345px;">
 
+				<div class="modal-header">
+					<div id="fullViewHeader" class="h3"></div>
+				</div>
 
+				<div class="modal-body pb-0">
+					<div class="row">
+						<h4 class="text-dark col-4 fs-16px  " style="padding-right: 0px;">Created on&#160;&#160;:</h4>
+						<span id="creationDateSpan"class="text-muted fs-15px col-8"></span>
+					</div>                             
+					
+					<div class="row mt-15px">
+						<h4 class="text-dark col-4 fs-16px">Deadline&#160;&#160;&#160;&#160;&#160;&#160;:</h4>
+						<span id="deadlineSpan" class="text-danger fs-15px col-8"></span>
+					</div>
+					<div class="row mt-15px">
+						<h4 class="text-dark col-4 fs-16px">Priority&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:</h4>
+						<span id="prioritySpan" class="text-muted fs-15px col-8"></span>
+					</div>
+					<div class="row mt-15px">		
+						<h4 class="text-dark col-4 fs-16px">Description&#160;:</h4>
+						<span id="descriptionSpan"class="text-muted fs-15px col-8" style="width:300px;"></span>
+					</div>
+					<div class="modal-footer">
+						<button onclick="editTask(this.id)" name="editTaskBtn" type="button" class="btn" style="background-color:#0864cc;"><i class="bi bi-pencil-fill fs-6 text-white"></i></button>
+
+						<button onclick="deleteTask(this.id)" name="deleteTaskBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-trash3 fs-6"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
 	<script src="assets/js/data.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="assets/js/app.js"></script>
 	<!-- ================== END core-js ================== -->
 	
 </body>
 </html>
-
 
 
 

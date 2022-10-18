@@ -94,7 +94,7 @@ function add()
         document.getElementById('Description').value="";
         $('#modal-task').modal('hide')
     }
-    console.log(tasks);
+
 }
 
 
@@ -102,7 +102,13 @@ function add()
 function deleteTask(ID)
 {   
     let idToDelete=ID.slice(-1);
-    tasks[idToDelete]=tasks[idToDelete+1];
-    delete tasks[tasks.length];
+    // tasks[idToDelete]=tasks[idToDelete+1];
+    delete tasks[idToDelete];
     console.log(tasks);
+    let btnID = `Task${idToDelete }`;
+    const hamid =document.getElementById('btnID');
+    alert(btnID);
+    hamid.remove();
+    // alert(btnID);
+    
 }
