@@ -5,6 +5,9 @@
 
 readTask();
 function saveTask(){
+    $(document).ready(function(){
+        $("#modal-task").modal("show");
+    });
     // FORM VALIDATION
     if(document.getElementsByClassName('titleInput')[0].value.trim()!=0)
     { 
@@ -144,7 +147,7 @@ function readTask()
         {
             icon="bi bi-check2-square text-green fs-19px";
         }  
-        button = `<button id="${"myButton"+i}" class="list-group-item-action mx-0 border row align-items-center bg-white pb-4px " data-bs-toggle="modal" data-bs-target="#fullView" onclick="fullViewOfTheTask(this.id)">
+        button = `<button id="${"myButton"+i}" class="list-group-item-action mx-0 border row align-items-center bg-white pb-4px" onclick="fullViewOfTheTask(this.id)">
         <div class="col-1">
         <i class="${icon}"></i> 
         </div>
@@ -239,6 +242,9 @@ function deleteTask(ToDelete) {
 }
 
 function fullViewOfTheTask(ID) {
+    $(document).ready(function(){
+        $("#fullView").modal("show");
+    });
     let index=ID.slice(-1);
     document.getElementById('creationDateSpan').innerText=tasks[index].creation;
     document.getElementById('deadlineSpan').innerText=tasks[index].deadLine;

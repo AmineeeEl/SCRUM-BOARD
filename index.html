@@ -24,7 +24,6 @@
 	<!-- ================== END core-css ================== -->
 </head>
 <body>
-
 	<!-- BEGIN #app -->
 	<div id="app" class="app-without-sidebar">
 		<!-- BEGIN #content -->
@@ -44,7 +43,7 @@
 				
 				<div class="">
 					
-					<button class="btn btn-lg btn-info shadow-sm text-white fs-15px" type="button" data-bs-toggle="modal" data-bs-target="#modal-task">
+					<button class="btn btn-lg btn-info shadow-sm text-white fs-15px" type="button" onclick="saveTask()">
 						<i class="bi bi-plus-lg text-white"></i> Add Task</button>
 					
 					
@@ -85,7 +84,6 @@
 			</div>
 		</div>
 		</div>
-
 		<!-- END #content -->
 		
 		
@@ -156,6 +154,7 @@
 
 				<div class="modal-header">
 					<div id="fullViewHeader" class="h3"></div>
+					<button onclick="showEditModel(this.id)" name="editTaskBtn" type="button" class="btn" style="background-color:#0864cc;"><i class="bi bi-pencil-fill fs-6 text-white"></i></button>
 				</div>
 
 				<div class="modal-body pb-0">
@@ -184,10 +183,9 @@
 						<h4 class="text-dark fs-16px">Description&#160;:</h4>
 						<span id="descriptionSpan"class="text-muted fs-15px" style="width:1;"></span>
 					</div>
-					<div class="modal-footer">
-						<button onclick="showEditModel(this.id)" name="editTaskBtn" type="button" class="btn" style="background-color:#0864cc;"><i class="bi bi-pencil-fill fs-6 text-white"></i></button>
-
-						<button onclick="deleteTask(this.id)" name="deleteTaskBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-trash3 fs-6"></i></button>
+					<div class="modal-footer" style="padding-right: 0px;">
+						
+						<button onclick="deleteTask(this.id)" name="deleteTaskBtn" type="button" class="btn btn-danger " data-bs-dismiss="modal">Delete <i class="bi bi-trash3 fs-6"></i></button>
 					</div>
 				</div>
 			</div>
