@@ -131,8 +131,7 @@ function readTask()
     let shortDescription;
     let toDoCount=0, doneCount=0, inProgessCount=0;
     for(let i =0 ;i<tasks.length;i++)
-    {       
-        
+    {  
         if(!(i in tasks)){
             if(i<tasks.length-1){
                 i++;
@@ -164,7 +163,7 @@ function readTask()
             icon="bi bi-check2-square text-green fs-19px";
         }  
         
-        button = `<button id="${"myButton"+i}" class="list-group-item-action mx-0 border row align-items-center bg-white pb-4px" onclick="fullViewOfTheTask(this.id)">
+        button = `<button id="${"myButton"+i}" class="list-group-item-action mx-0 border row align-items-center  pb-4px lalala" onclick="fullViewOfTheTask(this.id)" draggable="true" ondrag="drag(event)">
         <div class="col-1">
         <i class="${icon}"></i> 
         </div>
@@ -249,6 +248,7 @@ function editTask(ID)
 }
 
 function deleteTask(ToDelete) {
+    console.log(tasks);
     
     // DELETE
     if(ToDelete.length==7){
@@ -257,7 +257,7 @@ function deleteTask(ToDelete) {
     else 
     {
         indexToDelete = ToDelete.slice(0,2);
-    }
+    }alert(indexToDelete)
     // tasks.splice(indexToDelete,1);
     delete tasks[indexToDelete];
     // CLEAR
@@ -288,3 +288,20 @@ function fullViewOfTheTask(ID) {
     btn.setAttribute('id',index+"Delete");
     document.querySelector('[name="editTaskBtn"]').setAttribute('id',index+"Edit");
 };
+
+function allowDrop(e){
+    e.preventDefault();
+}
+let indexToMove;
+function drag(e)
+{
+    e.preventDefault();
+    indexToMove= e.target.id.slice(8);
+    
+}
+function droped(e)
+{
+    tasks[indexToMove].status = "In-Progress";
+    clearTask();
+    readTask();
+}
