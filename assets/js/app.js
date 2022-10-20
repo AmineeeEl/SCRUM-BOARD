@@ -4,10 +4,15 @@
  */
 
 readTask();
-function saveTask(){
+function showAddTaskModel()
+{
     $(document).ready(function(){
         $("#modal-task").modal("show");
     });
+}
+function saveTask(){
+    
+    
     // FORM VALIDATION
     if(document.getElementsByClassName('titleInput')[0].value.trim()!=0)
     { 
@@ -91,7 +96,8 @@ function saveChanges(){
        } 
        
        Temp.deadLine =document.getElementsByClassName('dateInput')[1].value;
-       Temp.creation = Date().slice(0,21);
+       const creationDateInTasks = tasks[indexToEdit].creation;
+       Temp.creation =creationDateInTasks;
        
        // ADD TO THE ARRR
     //    tasks[indexToEdit]=Temp;
@@ -120,12 +126,21 @@ function clearTask(){
 }
 
 function readTask()
-{
+{   
     let button;
     let shortDescription;
     let toDoCount=0, doneCount=0, inProgessCount=0;
     for(let i =0 ;i<tasks.length;i++)
-    {
+    {       
+        
+        if(!(i in tasks)){
+            if(i<tasks.length-1){
+                i++;
+            }
+            else{break;}
+        }
+        
+       
         if(tasks[i].description.length>30)
         {
             shortDescription = tasks[i].description.slice(0,30)+"...";
@@ -135,6 +150,7 @@ function readTask()
             shortDescription = tasks[i].description;
         }
         let icon;
+        
         if(tasks[i].status=="To-Do")
         {
             icon="bi bi-question-square text-green fs-18px";
@@ -147,6 +163,7 @@ function readTask()
         {
             icon="bi bi-check2-square text-green fs-19px";
         }  
+        
         button = `<button id="${"myButton"+i}" class="list-group-item-action mx-0 border row align-items-center bg-white pb-4px" onclick="fullViewOfTheTask(this.id)">
         <div class="col-1">
         <i class="${icon}"></i> 
@@ -232,9 +249,17 @@ function editTask(ID)
 }
 
 function deleteTask(ToDelete) {
+    
     // DELETE
-    indexToDelete = ToDelete.slice(0,1);
-    tasks.splice(indexToDelete,1);
+    if(ToDelete.length==7){
+        indexToDelete = ToDelete.slice(0,1);
+    }
+    else 
+    {
+        indexToDelete = ToDelete.slice(0,2);
+    }
+    // tasks.splice(indexToDelete,1);
+    delete tasks[indexToDelete];
     // CLEAR
     clearTask();
     // READ
@@ -245,7 +270,13 @@ function fullViewOfTheTask(ID) {
     $(document).ready(function(){
         $("#fullView").modal("show");
     });
-    let index=ID.slice(-1);
+    let index;
+    if(ID.length==9){
+        index=ID.slice(-1);
+    }
+    else if(ID.length>9){
+        index=ID.slice(-2);
+    }
     document.getElementById('creationDateSpan').innerText=tasks[index].creation;
     document.getElementById('deadlineSpan').innerText=tasks[index].deadLine;
     document.getElementById('prioritySpan').innerText=tasks[index].priority;
