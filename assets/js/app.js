@@ -1,3 +1,4 @@
+
 // READS THE TASKS WHEN VISITING THE PAGE FOR THE FIRST TIME
 readTask();
 
@@ -11,7 +12,6 @@ function showAddTaskModel()
 
 // GETS THE USERS INPUT AND PUSH IT IN THE TASKS ARRAY
 function saveTask(){
-    
     
     // FORM VALIDATION
     if(document.getElementsByClassName('titleInput')[0].value.trim()!=0)
@@ -61,6 +61,7 @@ function saveTask(){
     
 }
 
+
 // GETS THE USERS INPUT AND OVERWRITES THE OLD INFOS
 function saveChanges(){
 
@@ -97,8 +98,10 @@ function saveChanges(){
        } 
        
        Temp.deadLine =document.getElementsByClassName('dateInput')[1].value;
+
        const creationDateInTasks = tasks[indexToEdit].creation;
        Temp.creation =creationDateInTasks;
+
        // ADD TO THE ARRR
     //    tasks[indexToEdit]=Temp;
        tasks.splice(indexToEdit, 1,Temp);
@@ -119,6 +122,7 @@ function saveChanges(){
    readTask();
 }
 
+
 // CLEARS THE INNER HTML
 function clearTask(){
     document.getElementById('doneCard').innerHTML="";
@@ -126,13 +130,16 @@ function clearTask(){
     document.getElementById('toDoCard').innerHTML="";
 }
 
+
 // ADDS THE TASKS CONTENT TO OUR HTML
 function readTask()
 {   
+
     let button;
     let shortDescription;
     let toDoCount=0, doneCount=0, inProgessCount=0;
     for(let i =0 ;i<tasks.length;i++)
+
     {   
         let isLast = false;
         while(!(i in tasks))
@@ -151,6 +158,7 @@ function readTask()
             break;
         }
  
+
         if(tasks[i].description.length>30)
         {
             shortDescription = tasks[i].description.slice(0,30)+"...";
@@ -160,7 +168,9 @@ function readTask()
             shortDescription = tasks[i].description;
         }
         let icon;
+
         
+
         if(tasks[i].status=="To-Do")
         {
             icon="bi bi-question-square text-green fs-18px";
@@ -173,8 +183,10 @@ function readTask()
         {
             icon="bi bi-check2-square text-green fs-19px";
         }  
+
         
         button = `<button id="${"myButton"+i}" class="list-group-item-action mx-0 border row align-items-center  pb-4px lalala" onclick="fullViewOfTheTask(this.id)" draggable="true" ondrag="drag(event)">
+
         <div class="col-1">
         <i class="${icon}"></i> 
         </div>
@@ -212,6 +224,7 @@ function readTask()
     
 }
 
+
 // SaVE => CLEAR => READ
 function CreateTask() {
 
@@ -227,6 +240,7 @@ function CreateTask() {
 
 // Global Variable:    
 let indexToEdit;
+
 //SHOW THE EDIT MODEL AND GET THE OLD USERS INPUT FROM THE ARRAY ,ACCEPTS THE ID OF THE BUTTON THAT CONTAINS THE IDEX AT IT FIRST PNE OR TWO CHAR
 function showEditModel(ID) 
 {   // DELETE
@@ -243,12 +257,14 @@ function showEditModel(ID)
     document.getElementsByClassName('dateInput')[1].value=tasks[indexToEdit].deadLine;
     document.getElementsByClassName('DescriptionInput')[1].value=tasks[indexToEdit].description;
     document.getElementsByClassName('statusInput')[0].value=tasks[indexToEdit].status;
+
     $(document).ready(function(){
         $("#modal-edit").modal("show");
     });
     $('#fullView').modal('hide')
     
 }
+
 
 // SAVECHANGES => CLEAR => READ
 function editTask(ID)
@@ -260,6 +276,7 @@ function editTask(ID)
     // READ
     readTask();
 }
+
 
 //DELETES THE USERS WANTED INDEX/ID ANd KEEPS ITS INdEX EMPTY TO AVOID ID REPETITION, ACCEPTS THE DELETE BUTTON ID THAT CONTAINS THE THE INDEX TO DELETE AT THE FIRST 1 OR 2 CHARS
 function deleteTask(ToDelete) {
@@ -274,17 +291,20 @@ function deleteTask(ToDelete) {
     }
     // tasks.splice(indexToDelete,1);
     delete tasks[indexToDelete];
+
     // CLEAR
     clearTask();
     // READ
     readTask();
 }
 
+
 // SHOWS A MODAL THAT SHOES THE INPUT DETAILS AND CONTAINS THE EDIT AND DELETE BUTTONS
 function fullViewOfTheTask(ID) {
     $(document).ready(function(){
         $("#fullView").modal("show");
     });
+
     let index;
     if(ID.length==9){
         index=ID.slice(-1);
@@ -292,6 +312,7 @@ function fullViewOfTheTask(ID) {
     else if(ID.length>9){
         index=ID.slice(-2);
     }
+
     document.getElementById('creationDateSpan').innerText=tasks[index].creation;
     document.getElementById('deadlineSpan').innerText=tasks[index].deadLine;
     document.getElementById('prioritySpan').innerText=tasks[index].priority;
@@ -341,3 +362,4 @@ function dropedDone(e)
     clearTask();
     readTask();
 }
+
