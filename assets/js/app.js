@@ -131,15 +131,24 @@ function readTask()
     let shortDescription;
     let toDoCount=0, doneCount=0, inProgessCount=0;
     for(let i =0 ;i<tasks.length;i++)
-    {  
-        if(!(i in tasks)){
-            if(i<tasks.length-1){
-                i++;
+    {   
+        let isLast = false;
+        while(!(i in tasks))
+        {   if(i!=tasks.length-1)
+            {
+                i++;    
             }
-            else{break;}
+            else
+            { 
+                isLast = true;
+                break
+            }
         }
-        
-       
+        if(isLast)
+        {
+            break;
+        }
+ 
         if(tasks[i].description.length>30)
         {
             shortDescription = tasks[i].description.slice(0,30)+"...";
@@ -221,11 +230,7 @@ function showEditModel(ID)
     let index=ID.slice(0,1);
     indexToEdit=index;
     document.getElementsByClassName('titleInput')[1].value=tasks[index].title;
-
-    
-
     document.getElementById(tasks[indexToEdit].type).checked= true;
-    
     document.getElementsByClassName('priorityInput')[1].value=tasks[index].priority;
     document.getElementsByClassName('dateInput')[1].value=tasks[index].deadLine;
     document.getElementsByClassName('DescriptionInput')[1].value=tasks[index].description;
@@ -248,7 +253,6 @@ function editTask(ID)
 }
 
 function deleteTask(ToDelete) {
-    console.log(tasks);
     
     // DELETE
     if(ToDelete.length==7){
@@ -257,7 +261,7 @@ function deleteTask(ToDelete) {
     else 
     {
         indexToDelete = ToDelete.slice(0,2);
-    }alert(indexToDelete)
+    }
     // tasks.splice(indexToDelete,1);
     delete tasks[indexToDelete];
     // CLEAR
@@ -299,9 +303,21 @@ function drag(e)
     indexToMove= e.target.id.slice(8);
     
 }
-function droped(e)
+function dropedInProgress(e)
 {
     tasks[indexToMove].status = "In-Progress";
+    clearTask();
+    readTask();
+}
+function dropedToDo(e)
+{
+    tasks[indexToMove].status = "To-Do";
+    clearTask();
+    readTask();
+}
+function dropedDone(e)
+{
+    tasks[indexToMove].status = "Done";
     clearTask();
     readTask();
 }
