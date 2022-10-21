@@ -72,7 +72,7 @@
 					</div>
 				</div>
 				
-				<div  class="myCard m-2 shadow-sm "style="width:50vw;border-radius:7px;"ondragover="allowDrop(event)" ondrop="dropedDone(event)">
+				<div  class="myCard m-2 shadow-sm "style="width:50vw;border-radius:7px;"ondragover="allowDrop(event)" ondrop="dropedDone(event)" ondragover="dragedOver(event)">
 					<div class=" h-35px align "style="padding-left:20px;background-color: #2d353c;border-top-left-radius:7px;border-top-right-radius:7px;">
 						<h4 class="fs-17px text-white fw-normal text-left shadow pt-8px " >Done (<span id="done-tasks-count">3</span>)</h4>
 					</div>
@@ -148,7 +148,7 @@
 	</div>
 
 	<!-- BUTTON MODAL -->
-	<div class="modal fade hamidInput" id="fullView" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade " id="fullView" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content" style="min-width:345px;">
 

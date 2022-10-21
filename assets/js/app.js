@@ -1,15 +1,15 @@
-/**
- * In this file app.js you will find all CRUD functions name.
- * 
- */
-
+// READS THE TASKS WHEN VISITING THE PAGE FOR THE FIRST TIME
 readTask();
+
+// ADD TASK TARGETED MODAL
 function showAddTaskModel()
 {
     $(document).ready(function(){
         $("#modal-task").modal("show");
     });
 }
+
+// GETS THE USERS INPUT AND PUSH IT IN THE TASKS ARRAY
 function saveTask(){
     
     
@@ -61,6 +61,7 @@ function saveTask(){
     
 }
 
+// GETS THE USERS INPUT AND OVERWRITES THE OLD INFOS
 function saveChanges(){
 
    // FORM VALIDATION
@@ -98,7 +99,6 @@ function saveChanges(){
        Temp.deadLine =document.getElementsByClassName('dateInput')[1].value;
        const creationDateInTasks = tasks[indexToEdit].creation;
        Temp.creation =creationDateInTasks;
-       
        // ADD TO THE ARRR
     //    tasks[indexToEdit]=Temp;
        tasks.splice(indexToEdit, 1,Temp);
@@ -119,12 +119,14 @@ function saveChanges(){
    readTask();
 }
 
+// CLEARS THE INNER HTML
 function clearTask(){
     document.getElementById('doneCard').innerHTML="";
     document.getElementById('inProgessCard').innerHTML="";
     document.getElementById('toDoCard').innerHTML="";
 }
 
+// ADDS THE TASKS CONTENT TO OUR HTML
 function readTask()
 {   
     let button;
@@ -210,6 +212,7 @@ function readTask()
     
 }
 
+// SaVE => CLEAR => READ
 function CreateTask() {
 
     // SAVE
@@ -224,17 +227,22 @@ function CreateTask() {
 
 // Global Variable:    
 let indexToEdit;
-
+//SHOW THE EDIT MODEL AND GET THE OLD USERS INPUT FROM THE ARRAY ,ACCEPTS THE ID OF THE BUTTON THAT CONTAINS THE IDEX AT IT FIRST PNE OR TWO CHAR
 function showEditModel(ID) 
-{   
-    let index=ID.slice(0,1);
-    indexToEdit=index;
-    document.getElementsByClassName('titleInput')[1].value=tasks[index].title;
+{   // DELETE
+    if(ID.length==5){
+        indexToEdit=ID.slice(0,1);
+    }
+    else 
+    {
+        indexToEdit = ID.slice(0,2);
+    }
+    document.getElementsByClassName('titleInput')[1].value=tasks[indexToEdit].title;
     document.getElementById(tasks[indexToEdit].type).checked= true;
-    document.getElementsByClassName('priorityInput')[1].value=tasks[index].priority;
-    document.getElementsByClassName('dateInput')[1].value=tasks[index].deadLine;
-    document.getElementsByClassName('DescriptionInput')[1].value=tasks[index].description;
-    document.getElementsByClassName('statusInput')[0].value=tasks[index].status;
+    document.getElementsByClassName('priorityInput')[1].value=tasks[indexToEdit].priority;
+    document.getElementsByClassName('dateInput')[1].value=tasks[indexToEdit].deadLine;
+    document.getElementsByClassName('DescriptionInput')[1].value=tasks[indexToEdit].description;
+    document.getElementsByClassName('statusInput')[0].value=tasks[indexToEdit].status;
     $(document).ready(function(){
         $("#modal-edit").modal("show");
     });
@@ -242,6 +250,7 @@ function showEditModel(ID)
     
 }
 
+// SAVECHANGES => CLEAR => READ
 function editTask(ID)
 {   
     // SAVE
@@ -252,6 +261,7 @@ function editTask(ID)
     readTask();
 }
 
+//DELETES THE USERS WANTED INDEX/ID ANd KEEPS ITS INdEX EMPTY TO AVOID ID REPETITION, ACCEPTS THE DELETE BUTTON ID THAT CONTAINS THE THE INDEX TO DELETE AT THE FIRST 1 OR 2 CHARS
 function deleteTask(ToDelete) {
     
     // DELETE
@@ -270,6 +280,7 @@ function deleteTask(ToDelete) {
     readTask();
 }
 
+// SHOWS A MODAL THAT SHOES THE INPUT DETAILS AND CONTAINS THE EDIT AND DELETE BUTTONS
 function fullViewOfTheTask(ID) {
     $(document).ready(function(){
         $("#fullView").modal("show");
@@ -293,28 +304,37 @@ function fullViewOfTheTask(ID) {
     document.querySelector('[name="editTaskBtn"]').setAttribute('id',index+"Edit");
 };
 
+// ALLOWS THE DROP INTO IT ELEMENT CALLED IN
 function allowDrop(e){
     e.preventDefault();
 }
+
+// Global Variable: 
 let indexToMove;
+// GETS THE ID OF THE DRAGED ELEMENT
 function drag(e)
 {
-    e.preventDefault();
+    e.preventDefault();         
     indexToMove= e.target.id.slice(8);
-    
 }
+
+// THIS Fct GETS TRIG IF THE ELEMENT CALLED IN WAS THE DROP TARGET
 function dropedInProgress(e)
 {
     tasks[indexToMove].status = "In-Progress";
     clearTask();
     readTask();
 }
+
+// THIS Fct GETS TRIG IF THE ELEMENT CALLED IN WAS THE DROP TARGET
 function dropedToDo(e)
 {
     tasks[indexToMove].status = "To-Do";
     clearTask();
     readTask();
 }
+
+// THIS Fct GETS TRIG IF THE ELEMENT CALLED IN WAS THE DROP TARGET
 function dropedDone(e)
 {
     tasks[indexToMove].status = "Done";
